@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --vibrant-blue: #37deff;
+    --light-blue: #00B4DB;
+    --dark-blue: #0083B0;
+    --yellow: #eeff37;
+    --complement-blue: #21c1f7;
+    --donate-button-height: 37.5px;
+  }
+  
+  html {
+    font-family: 'MetropolisRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    padding: 2.5rem;
+    margin: 0;
+  
+    background-size: cover;
+    background: #00B4DB;
+    background-repeat: no-repeat;
+    background: linear-gradient( to right bottom, var(--light-blue), var(--dark-blue));
+  
+    color: white;
+    
+    scroll-behavior: smooth;
+  }
+  
+  ::selection {
+    background: rgba(0,0,30,0.15);
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  
+  p, li {
+    max-width: 38em;
+    line-height: 1.4;
+  }
+  
+  li {
+    max-width: 36em;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'MetropolisThin', sans-serif;
+  }
+  
+  h1 {
+    margin-bottom: 0;
+  }
+  
+  .timeline h1 {
+    margin-bottom: 0;
+  }
+  .timeline h2:not(:first-child) {
+    margin-top: 2rem;
+  }
+  .timeline h2 {
+    margin-bottom: 0;
+  }
+  .timeline h3, .timeline h4 {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  .timeline p {
+    margin-top: 0.38rem;
+    margin-bottom: 1rem;
+  }
+  .timeline p, .timeline h3, .timeline h4 {
+    margin-left: 1.5rem;
+  }
+  .timeline h3 code {
+    font-weight: 500;
+    margin-right: 0.45rem;
+  }
+  .timeline code {
+    font-size: 1.25em;
+  }
+  
+  a:link, a:visited {
+    color: var(--vibrant-blue);
+    text-decoration: none;
+  }
+  a:link:hover, a:visited:hover {
+    background-image: -webkit-linear-gradient(left, #ffd737 0%, var(--yellow) 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+  
+  h1:not(:first-child) {
+    margin-top: 4rem;
+  }
+  
+  li {
+    margin-bottom: 0.3rem;
+  }
+  
+  h1#donate::before, h1#consultancy::before, h1#career::before, h1#presence::before, h1#timeline::before {
+    display: block;
+    content: " ";
+    margin-top: -4rem;
+    height: 4rem;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  h1:target {
+    text-shadow: 0 3px var(--dark-blue);
+    font-family: 'MetropolisRegular', sans-serif;
+  }
+  
+  #donate-tray {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0.6rem;
+  }
+  
+  #donate-tray, .label, .flair {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+  }
+  
+  #donate-tray a img, #bitcoin {
+    border-radius: 0.15rem;
+  }
+  #donate-tray > *:not(:last-child) {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  #donate-tray img {
+    width: 160px;
+    height: var(--donate-button-height);
+  }
+  #paypal {
+    position: relative;
+  }
+  #tip-footnote {
+    text-align: center;
+    font-size: 0.7em;
+    color: rgba(255,255,255,0.70);
+    position: absolute;
+    bottom: -1.35em;
+    left: 0;
+    right: 0;
+  }
+  
+  #bitcoin {
+    background-color: var(--complement-blue);
+    height: var(--donate-button-height);
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center
+  }
+  #bitcoin img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+  #bitcoin code {
+    user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    -webkit-touch-callout: text;
+    -o-user-select: text;
+    -moz-user-select: text;
+  }
+  
+  .shadowed {
+    box-shadow: 0 2px 5px rgba(0,131,176,0.2)
+  }
+  
+  img.flair {
+    border: white 3px solid;
+    width: 300px;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* the 4px is a fudge */
+  @media all and (max-width: calc(600px + 1rem + 5rem + 4px)) {
+    img.flair {
+      width: calc(50% - 1rem);
+      margin-right: 0;
+    }
+  }
+  
+  @media all and (max-width: 500px) {
+    img.flair {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  
+  @media all and (max-width: 414px) {
+    #paypal {
+      margin-top: 2rem;
+    }
+    #bitcoin {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+    }
+    html {
+      padding: 1.5rem 2rem;
+    }
+  }
+  
+  @media all and (max-width: 375px) {
+    #bitcoin {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media all and (max-width: 320px) {
+    html {
+      font-size: 10pt;
+      padding: 1rem 1.5rem;
+    }
+    #bitcoin {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .label {
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: rgba(55, 222, 255, 0.4);
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+    font-family: 'MetropolisThin', sans-serif;
+    padding: 0.2rem;
+    padding-bottom: 0.16rem;
+    padding-left: 0.25rem;
+    mix-blend-mode: overlay;
+    vertical-align: middle;
+  }
+  
+  .frame {
+    position: relative;
+  }
+  .frame .caption {
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    font-size: 70%;
+    text-align: center;
+    font-family: "MetropolisLight", sans-serif;
+    opacity: 0.7;
+  }
+  
+  #past-work {
+    margin-top: 0.5rem;
+  }
+  #past-work img {
+    border-radius: 17%;
+    margin: 0.3rem;
+    box-shadow: 0 2px 5px rgba(0,131,176,0.4)
+  }
